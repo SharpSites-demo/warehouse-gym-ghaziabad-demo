@@ -335,9 +335,10 @@ section{scroll-margin-top:70px}
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* Canvas UI Ripple — actual vendored engine (hero signature) */
-  try{
-    if(!reduce&&window.CanvasRipple){
+  /* Canvas UI Ripple — actual vendored engine (hero signature, idle-time init) */
+  var initRipple=function(){
+    try{
+      if(reduce||!window.CanvasRipple)return;
       var host=document.querySelector('.ripple-host');
       var content=document.querySelector('.ripple-content');
       var glOK=!!document.createElement('canvas').getContext('webgl2');
@@ -367,8 +368,9 @@ document.addEventListener('DOMContentLoaded',function(){
           window.CanvasRipple.createRipple({source:src2,content:content,output:out2},{shine:.7,trigger:'click'});
         }
       }
-    }
-  }catch(e){}
+    }catch(e){}
+  };
+  if(window.requestIdleCallback){requestIdleCallback(initRipple,{timeout:1500});}else{setTimeout(initRipple,200);}
   /* GSAP hero entrance */
   if(!reduce&&window.gsap){
     gsap.timeline({defaults:{ease:'power3.out'}})
