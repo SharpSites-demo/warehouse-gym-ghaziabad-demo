@@ -1,0 +1,33 @@
+# MIT + Commons Clause License Condition v1.0
+
+Copyright (c) 2026 David Haz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, subject to the "Commons Clause" condition below.
+
+"Commons Clause" License Condition v1.0
+The Software is provided to you by the Copyright Holder under the License, as
+defined below, subject to the following condition.
+
+Without limiting other conditions in the License, the grant of rights under the
+License will not include, and the License does not grant to you, the right to
+Sell the Software.
+
+For purposes of the foregoing, "Sell" means practicing any or all of the rights
+granted to you under the License to provide to third parties, for a fee or
+other consideration (including without limitation fees for hosting or
+consulting/support services related to the Software), a product or service
+whose value derives, entirely or substantially, from the functionality of the
+Software. Any license notice or attribution work in the Software must not be
+removed or altered.
+
+Licensing inquiries: https://github.com/DavidHDev/canvas-ui
+
+---
+
+This site vendors the Canvas UI "Ripple" vanilla WebGL component
+(src/lib/Ripple/RippleVanilla.ts), lightly transpiled to plain JavaScript:
+https://github.com/DavidHDev/canvas-ui
