@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Warehouse Gym — Ghaziabad's Spacious Training Floor</title>
 <meta name="description" content="The Warehouse Gym, Ghaziabad — a wide, uncrowded training floor with advanced machines, a dedicated cardio room and a posing room, rated 4.7★ by 302 members. Ask about a trial on WhatsApp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0b0d0e;--panel:#121517;--panel2:#171b1e;--line:#262c30;--orange:#ff5a1f;--steel:#9aa4ab;--chalk:#e8ebed;--dim:#b9c2c8}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--chalk);font:16px/1.6 Inter,Arial,sans-serif;overflow-x:hidden}
+body{margin:0;background:var(--ink);color:var(--chalk);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .skip{position:absolute;left:-999px;top:8px;background:var(--orange);color:var(--ink);padding:10px 16px;font-weight:600;z-index:99}
 .skip:focus{left:8px}
 .wrap{max-width:1140px;margin:auto;padding:0 22px}
-h1,h2,h3,.wordmark{font-family:Archivo,Inter,Arial,sans-serif}
+h1,h2,h3,.wordmark{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 .eyebrow{color:var(--orange);font-weight:600;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+/* NAV */
 .nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:14px}
 .wordmark{font-weight:900;letter-spacing:.02em;font-size:17px;text-transform:uppercase}
 .wordmark em{color:var(--orange);font-style:normal}
 .nav-right{display:flex;align-items:center;gap:18px}
 .nav small{color:var(--steel);letter-spacing:.14em;text-transform:uppercase;font-weight:600;font-size:11px}
+/* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;font-weight:600;font-size:16px;border:0;cursor:pointer;border-radius:4px}
 .btn-primary{background:var(--orange);color:#160b06}
 .btn-primary:hover{background:#ff6d38}
 .btn-ghost{background:transparent;color:var(--chalk);border:1px solid #3a4147}
 .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
 .btn-sm{min-height:44px;padding:10px 18px;font-size:14px}
+/* HERO + RIPPLE HOST */
 .ripple-host{position:relative}
 .ripple-content{position:relative;width:100%;height:100%}
 .hero{background:radial-gradient(1200px 500px at 75% -10%,#1c2126 0%,var(--ink) 60%);border-bottom:1px solid var(--line)}
@@ -41,40 +41,46 @@ h1,h2,h3,.wordmark{font-family:Archivo,Inter,Arial,sans-serif}
 .stat-strip{display:flex;flex-wrap:wrap;gap:0;margin-top:38px;border:1px solid var(--line);background:#0e1113}
 .stat{flex:1 1 130px;padding:16px 18px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
-.stat b{display:block;font-family:Archivo;font-size:24px;font-weight:900;color:var(--chalk)}
+.stat b{display:block;font-family:inherit;font-size:24px;font-weight:900;color:var(--chalk)}
 .stat span{font-size:12.5px;color:var(--steel);letter-spacing:.04em}
+/* FLOOR PLAN SVG */
 .plan-card{background:var(--panel);border:1px solid var(--line);padding:22px}
 .plan-card figcaption{font-size:12.5px;color:var(--steel);margin-top:12px;letter-spacing:.03em}
 .plan{width:100%;height:auto;display:block}
 .plan .zone{fill:rgba(255,255,255,.025);stroke:#3a4147;stroke-width:1.5}
 .plan .zone.hot{stroke:var(--orange)}
-.plan .lbl{font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:12px;letter-spacing:.12em;fill:var(--chalk)}
-.plan .sub{font-family:Inter,Arial,sans-serif;font-size:10.5px;fill:var(--steel)}
+.plan .lbl{font-family:Arial,sans-serif;font-weight:800;font-size:12px;letter-spacing:.12em;fill:var(--chalk)}
+.plan .sub{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:10.5px;fill:var(--steel)}
 .plan .grid-l{stroke:#1d2226;stroke-width:1}
+/* MARQUEE */
 .marquee{border-bottom:1px solid var(--line);background:var(--orange);color:#160b06;overflow:hidden;white-space:nowrap;padding:12px 0}
-.marquee-track{display:inline-block;animation:mq 26s linear infinite;font-family:Archivo;font-weight:900;letter-spacing:.14em;font-size:14px;text-transform:uppercase}
+.marquee-track{display:inline-block;animation:mq 26s linear infinite;font-family:inherit;font-weight:900;letter-spacing:.14em;font-size:14px;text-transform:uppercase}
 .marquee-track span{padding:0 26px}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* SECTIONS */
 section{scroll-margin-top:70px}
 .sec{padding:84px 0}
 .sec-head{max-width:720px;margin-bottom:44px}
 .sec-head h2{font-size:clamp(30px,4.4vw,50px);line-height:1.04;margin:12px 0 16px;text-transform:uppercase;letter-spacing:-.01em}
 .sec-head p{color:var(--dim);margin:0;font-size:17px}
+/* ZONES */
 .zones{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}
 .zone-card{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--orange);padding:26px}
 .zone-card.tall{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between}
-.zone-card .num{font-family:Archivo;font-weight:900;color:var(--orange);font-size:14px;letter-spacing:.14em}
+.zone-card .num{font-family:inherit;font-weight:900;color:var(--orange);font-size:14px;letter-spacing:.14em}
 .zone-card h3{font-size:22px;margin:10px 0 10px;text-transform:uppercase;letter-spacing:.01em}
 .zone-card p{color:var(--dim);margin:0 0 16px;font-size:15.5px}
 .ph{border:1px dashed #4a5259;padding:12px 14px;font-size:14px;color:var(--steel);background:#0e1113;border-radius:3px}
 .zone-card .ph{margin-top:auto}
+/* EQUIPMENT */
 .equip{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .equip-item{background:var(--ink);border:1px solid var(--line);padding:24px 20px;text-align:left}
 .equip-item svg{display:block;margin-bottom:16px}
-.equip-item b{font-family:Archivo;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.03em;display:block;margin-bottom:6px}
+.equip-item b{font-family:inherit;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.03em;display:block;margin-bottom:6px}
 .equip-item span{color:var(--steel);font-size:14px}
 .equip .ph{margin-top:18px}
+/* MEMBERSHIP */
 .member{padding:84px 0}
 .member-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0}
 .member-cta{background:var(--orange);color:#160b06;padding:44px 38px;display:flex;flex-direction:column;justify-content:center}
@@ -86,6 +92,7 @@ section{scroll-margin-top:70px}
 .member-cta .tel{margin-top:16px;font-weight:600;color:#160b06;text-decoration:underline}
 .member-plans{background:var(--panel);border:1px solid var(--line);padding:38px 34px;display:flex;flex-direction:column;gap:14px;justify-content:center}
 .member-plans h3{margin:0 0 6px;font-size:20px;text-transform:uppercase}
+/* VISIT */
 .visit{background:var(--panel2);border-top:1px solid var(--line)}
 .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .visit-card{background:var(--ink);border:1px solid var(--line);padding:30px}
@@ -95,6 +102,7 @@ section{scroll-margin-top:70px}
 .vrow b{color:var(--chalk);font-weight:600;min-width:88px}
 .vrow a{color:var(--orange);font-weight:600}
 .map-ph{min-height:260px;display:flex;align-items:center;justify-content:center}
+/* FOOTER + STICKY BAR */
 .footer{padding:34px 0 120px;color:var(--steel);font-size:14px}
 .footer a{color:var(--chalk)}
 .footer .fline{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
@@ -105,21 +113,21 @@ section{scroll-margin-top:70px}
 .wa-fab{position:fixed;right:20px;bottom:20px;z-index:20;display:inline-flex;align-items:center;gap:10px;background:#160b06;color:var(--chalk);border:1px solid var(--orange);border-radius:50px;padding:14px 22px;font-weight:600;box-shadow:0 12px 30px #00000066}
 .wa-fab:hover{background:var(--orange);color:#160b06}
 @media(max-width:860px){
-.hero-grid,.member-grid,.visit-grid{grid-template-columns:1fr}
-.zones{grid-template-columns:1fr}
-.zone-card.tall{grid-row:auto}
-.equip-grid{grid-template-columns:1fr 1fr}
-.nav small{display:none}
-.nav .btn{display:none}
-.actionbar{display:grid}
-.wa-fab{display:none}
-.footer{padding-bottom:96px}
-.sec{padding:64px 0}
+  .hero-grid,.member-grid,.visit-grid{grid-template-columns:1fr}
+  .zones{grid-template-columns:1fr}
+  .zone-card.tall{grid-row:auto}
+  .equip-grid{grid-template-columns:1fr 1fr}
+  .nav small{display:none}
+  .nav .btn{display:none}
+  .actionbar{display:grid}
+  .wa-fab{display:none}
+  .footer{padding-bottom:96px}
+  .sec{padding:64px 0}
 }
 @media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto!important}
-.marquee-track{animation:none}
-*{transition:none!important}
+  html{scroll-behavior:auto!important}
+  .marquee-track{animation:none}
+  *{transition:none!important}
 }
 </style>
 <script type="application/ld+json">
@@ -128,235 +136,249 @@ html{scroll-behavior:auto!important}
 </head>
 <body>
 <a class="skip" href="#floor">Skip to content</a>
+
 <header class="wrap">
-<nav class="nav" aria-label="Main">
-<div class="wordmark">The <em>Warehouse</em> Gym</div>
-<div class="nav-right"><small>Ghaziabad · Uttar Pradesh</small>
-<a class="btn btn-primary btn-sm" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">Get Membership Info</a>
-</div>
-</nav>
+  <nav class="nav" aria-label="Main">
+    <div class="wordmark">The <em>Warehouse</em> Gym</div>
+    <div class="nav-right"><small>Ghaziabad · Uttar Pradesh</small>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">Get Membership Info</a>
+    </div>
+  </nav>
 </header>
+
 <section class="hero" id="top" aria-label="Welcome">
-<div class="ripple-host">
-<div class="ripple-content">
-<div class="wrap hero-grid">
-<div>
-<p class="eyebrow">Ghaziabad · Rated 4.7★ by 302 members</p>
-<h1>Never wait for a <span>machine</span> again.</h1>
-<p class="lede">A warehouse-scale training floor built so every rack, treadmill and bench stays within reach — the space, the advanced machines and the friendly team that members keep mentioning in their Google reviews.</p>
-<div class="cta-row">
-<a class="btn btn-primary" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">Ask About a Trial on WhatsApp</a>
-<a class="btn btn-ghost" href="#floor">See the Floor</a>
-</div>
-<div class="stat-strip" role="list">
-<div class="stat" role="listitem"><b>4.7★</b><span>302 Google reviews</span></div>
-<div class="stat" role="listitem"><b>Mon–Sat</b><span>5:00 AM – 11:00 PM</span></div>
-<div class="stat" role="listitem"><b>Sunday</b><span>7:00 AM – 1:00 PM</span></div>
-<div class="stat" role="listitem"><b>+91 99530 12117</b><span>Call the gym</span></div>
-</div>
-</div>
-<figure class="plan-card">
-<svg class="plan" viewBox="0 0 520 400" role="img" aria-label="Illustrated floor plan of The Warehouse Gym showing strength floor, cardio room, free-weight zone and posing room">
-<rect class="grid-l" x="0" y="80" width="520" height="1"/><rect class="grid-l" x="0" y="160" width="520" height="1"/><rect class="grid-l" x="0" y="240" width="520" height="1"/><rect class="grid-l" x="0" y="320" width="520" height="1"/>
-<rect class="grid-l" x="90" y="0" width="1" height="400"/><rect class="grid-l" x="180" y="0" width="1" height="400"/><rect class="grid-l" x="270" y="0" width="1" height="400"/><rect class="grid-l" x="360" y="0" width="1" height="400"/><rect class="grid-l" x="450" y="0" width="1" height="400"/>
-<rect class="zone" x="24" y="24" width="472" height="30"/>
-<text class="sub" x="36" y="43">RECEPTION &amp; ENTRANCE</text>
-<rect class="zone hot" x="24" y="70" width="290" height="306"/>
-<text class="lbl" x="44" y="102">STRENGTH FLOOR</text>
-<text class="sub" x="44" y="120">Racks · advanced machines · wide lanes</text>
-<g stroke="#ff5a1f" stroke-width="2" fill="none" opacity=".8">
-<rect x="52" y="150" width="34" height="22"/><rect x="52" y="196" width="34" height="22"/><rect x="52" y="242" width="34" height="22"/>
-<rect x="120" y="150" width="34" height="22"/><rect x="120" y="196" width="34" height="22"/><rect x="120" y="242" width="34" height="22"/>
-<line x1="200" y1="150" x2="200" y2="264"/><line x1="188" y1="150" x2="212" y2="150"/><line x1="188" y1="264" x2="212" y2="264"/>
-<line x1="240" y1="150" x2="240" y2="264"/><line x1="228" y1="150" x2="252" y2="150"/><line x1="228" y1="264" x2="252" y2="264"/>
-</g>
-<rect class="zone hot" x="330" y="70" width="166" height="140"/>
-<text class="lbl" x="346" y="98">CARDIO ROOM</text>
-<g stroke="#9aa4ab" stroke-width="2" fill="none" opacity=".85">
-<path d="M348 130 l30 -12 v34 h-30 z"/><path d="M396 130 l30 -12 v34 h-30 z"/><path d="M444 130 l30 -12 v34 h-30 z"/>
-</g>
-<rect class="zone" x="330" y="226" width="166" height="70"/>
-<text class="lbl" x="346" y="254">FREE WEIGHTS</text>
-<g stroke="#9aa4ab" stroke-width="2" fill="none"><line x1="346" y1="276" x2="378" y2="276"/><circle cx="342" cy="276" r="6"/><circle cx="382" cy="276" r="6"/></g>
-<rect class="zone" x="330" y="312" width="166" height="64"/>
-<text class="lbl" x="346" y="340">POSING ROOM</text>
-<text class="sub" x="346" y="358">Check your form</text>
-</svg>
-<figcaption>Illustrated floor plan · <span style="color:#c7a24a">[Add real gym floor photography]</span></figcaption>
-</figure>
-</div>
-</div>
-</div>
+  <div class="ripple-host">
+    <div class="ripple-content">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Ghaziabad · Rated 4.7★ by 302 members</p>
+          <h1>Never wait for a <span>machine</span> again.</h1>
+          <p class="lede">A warehouse-scale training floor built so every rack, treadmill and bench stays within reach — the space, the advanced machines and the friendly team that members keep mentioning in their Google reviews.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">Ask About a Trial on WhatsApp</a>
+            <a class="btn btn-ghost" href="#floor">See the Floor</a>
+          </div>
+          <div class="stat-strip" role="list">
+            <div class="stat" role="listitem"><b>4.7★</b><span>302 Google reviews</span></div>
+            <div class="stat" role="listitem"><b>Mon–Sat</b><span>5:00 AM – 11:00 PM</span></div>
+            <div class="stat" role="listitem"><b>Sunday</b><span>7:00 AM – 1:00 PM</span></div>
+            <div class="stat" role="listitem"><b>+91 99530 12117</b><span>Call the gym</span></div>
+          </div>
+        </div>
+        <figure class="plan-card">
+          <svg class="plan" viewBox="0 0 520 400" role="img" aria-label="Illustrated floor plan of The Warehouse Gym showing strength floor, cardio room, free-weight zone and posing room">
+            <rect class="grid-l" x="0" y="80" width="520" height="1"/><rect class="grid-l" x="0" y="160" width="520" height="1"/><rect class="grid-l" x="0" y="240" width="520" height="1"/><rect class="grid-l" x="0" y="320" width="520" height="1"/>
+            <rect class="grid-l" x="90" y="0" width="1" height="400"/><rect class="grid-l" x="180" y="0" width="1" height="400"/><rect class="grid-l" x="270" y="0" width="1" height="400"/><rect class="grid-l" x="360" y="0" width="1" height="400"/><rect class="grid-l" x="450" y="0" width="1" height="400"/>
+            <rect class="zone" x="24" y="24" width="472" height="30"/>
+            <text class="sub" x="36" y="43">RECEPTION &amp; ENTRANCE</text>
+            <rect class="zone hot" x="24" y="70" width="290" height="306"/>
+            <text class="lbl" x="44" y="102">STRENGTH FLOOR</text>
+            <text class="sub" x="44" y="120">Racks · advanced machines · wide lanes</text>
+            <g stroke="#ff5a1f" stroke-width="2" fill="none" opacity=".8">
+              <rect x="52" y="150" width="34" height="22"/><rect x="52" y="196" width="34" height="22"/><rect x="52" y="242" width="34" height="22"/>
+              <rect x="120" y="150" width="34" height="22"/><rect x="120" y="196" width="34" height="22"/><rect x="120" y="242" width="34" height="22"/>
+              <line x1="200" y1="150" x2="200" y2="264"/><line x1="188" y1="150" x2="212" y2="150"/><line x1="188" y1="264" x2="212" y2="264"/>
+              <line x1="240" y1="150" x2="240" y2="264"/><line x1="228" y1="150" x2="252" y2="150"/><line x1="228" y1="264" x2="252" y2="264"/>
+            </g>
+            <rect class="zone hot" x="330" y="70" width="166" height="140"/>
+            <text class="lbl" x="346" y="98">CARDIO ROOM</text>
+            <g stroke="#9aa4ab" stroke-width="2" fill="none" opacity=".85">
+              <path d="M348 130 l30 -12 v34 h-30 z"/><path d="M396 130 l30 -12 v34 h-30 z"/><path d="M444 130 l30 -12 v34 h-30 z"/>
+            </g>
+            <rect class="zone" x="330" y="226" width="166" height="70"/>
+            <text class="lbl" x="346" y="254">FREE WEIGHTS</text>
+            <g stroke="#9aa4ab" stroke-width="2" fill="none"><line x1="346" y1="276" x2="378" y2="276"/><circle cx="342" cy="276" r="6"/><circle cx="382" cy="276" r="6"/></g>
+            <rect class="zone" x="330" y="312" width="166" height="64"/>
+            <text class="lbl" x="346" y="340">POSING ROOM</text>
+            <text class="sub" x="346" y="358">Check your form</text>
+          </svg>
+          <figcaption>Illustrated floor plan · <span style="color:#c7a24a">[Add real gym floor photography]</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
 </section>
+
 <div class="marquee" aria-hidden="true">
-<div class="marquee-track"><span>Spacious layout</span><span>·</span><span>Advanced machines</span><span>·</span><span>Dedicated cardio room</span><span>·</span><span>Variety of equipment</span><span>·</span><span>Clean space</span><span>·</span><span>Affordable fees</span><span>·</span><span>Spacious layout</span><span>·</span><span>Advanced machines</span><span>·</span><span>Dedicated cardio room</span><span>·</span><span>Variety of equipment</span><span>·</span><span>Clean space</span><span>·</span><span>Affordable fees</span><span>·</span></div>
+  <div class="marquee-track"><span>Spacious layout</span><span>·</span><span>Advanced machines</span><span>·</span><span>Dedicated cardio room</span><span>·</span><span>Variety of equipment</span><span>·</span><span>Clean space</span><span>·</span><span>Affordable fees</span><span>·</span><span>Spacious layout</span><span>·</span><span>Advanced machines</span><span>·</span><span>Dedicated cardio room</span><span>·</span><span>Variety of equipment</span><span>·</span><span>Clean space</span><span>·</span><span>Affordable fees</span><span>·</span></div>
 </div>
+
 <section class="sec" id="floor">
-<div class="wrap">
-<div class="sec-head reveal">
-<p class="eyebrow">Inside the gym</p>
-<h2>Space is the first piece of equipment you'll notice.</h2>
-<p>Members reviewing the gym on Google keep naming the same strengths: the size of the floor, the room to move and the variety of machines. That is what a session here feels like.</p>
-</div>
-<div class="zones">
-<article class="zone-card tall reveal">
-<div>
-<div class="num">01 — THE FLOOR</div>
-<h3>Room to train, not to queue</h3>
-<p>Wide training lanes and an open layout mean your session keeps moving — no circling for a free machine at peak hours. It is the single most repeated compliment in member reviews.</p>
-</div>
-<div class="ph">[Add real wide-angle photos of the training floor]</div>
-</article>
-<article class="zone-card reveal">
-<div>
-<div class="num">02 — THE MACHINES</div>
-<h3>Advanced machines, named by members</h3>
-<p>Reviewers call out the advanced machines and the sheer variety of equipment — from strength racks to a separate cardio room.</p>
-</div>
-<div class="ph">[Add the full equipment list]</div>
-</article>
-<article class="zone-card reveal">
-<div>
-<div class="num">03 — THE TEAM</div>
-<h3>A friendly team behind the floor</h3>
-<p>The staff and the owner get named in reviews for being approachable and helpful — ask for a walkthrough on your first visit.</p>
-</div>
-<div class="ph">[Add trainer names, photos &amp; specialties]</div>
-</article>
-</div>
-</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Inside the gym</p>
+      <h2>Space is the first piece of equipment you'll notice.</h2>
+      <p>Members reviewing the gym on Google keep naming the same strengths: the size of the floor, the room to move and the variety of machines. That is what a session here feels like.</p>
+    </div>
+    <div class="zones">
+      <article class="zone-card tall reveal">
+        <div>
+          <div class="num">01 — THE FLOOR</div>
+          <h3>Room to train, not to queue</h3>
+          <p>Wide training lanes and an open layout mean your session keeps moving — no circling for a free machine at peak hours. It is the single most repeated compliment in member reviews.</p>
+        </div>
+        <div class="ph">[Add real wide-angle photos of the training floor]</div>
+      </article>
+      <article class="zone-card reveal">
+        <div>
+          <div class="num">02 — THE MACHINES</div>
+          <h3>Advanced machines, named by members</h3>
+          <p>Reviewers call out the advanced machines and the sheer variety of equipment — from strength racks to a separate cardio room.</p>
+        </div>
+        <div class="ph">[Add the full equipment list]</div>
+      </article>
+      <article class="zone-card reveal">
+        <div>
+          <div class="num">03 — THE TEAM</div>
+          <h3>A friendly team behind the floor</h3>
+          <p>The staff and the owner get named in reviews for being approachable and helpful — ask for a walkthrough on your first visit.</p>
+        </div>
+        <div class="ph">[Add trainer names, photos &amp; specialties]</div>
+      </article>
+    </div>
+  </div>
 </section>
+
 <section class="equip sec">
-<div class="wrap">
-<div class="sec-head reveal">
-<p class="eyebrow">Equipment</p>
-<h2>Every training style gets its own zone.</h2>
-<p>Strength, cardio, free weights and a posing room — separated so nobody's workout blocks anybody else's.</p>
-</div>
-<div class="equip-grid">
-<div class="equip-item reveal">
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><path d="M8 36V20l14-8 14 8v16"/><path d="M14 36V26h16v10"/><path d="M8 36h28"/></svg>
-<b>Strength &amp; Racks</b><span>Advanced machines members review by name</span>
-</div>
-<div class="equip-item reveal">
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><path d="M6 34l10-16 8 8 12-14"/><path d="M6 38h32"/></svg>
-<b>Dedicated Cardio Room</b><span>Its own room, away from the racks</span>
-</div>
-<div class="equip-item reveal">
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><line x1="10" y1="22" x2="34" y2="22"/><circle cx="8" cy="22" r="4"/><circle cx="36" cy="22" r="4"/></svg>
-<b>Free-Weight Zone</b><span>Dumbbells and bars with room to lift</span>
-</div>
-<div class="equip-item reveal">
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><rect x="8" y="8" width="28" height="28"/><line x1="8" y1="16" x2="36" y2="16"/><line x1="16" y1="16" x2="16" y2="36"/></svg>
-<b>Posing Room</b><span>Check form and progress on camera</span>
-</div>
-</div>
-<div class="ph reveal">[Add the complete equipment list and zone photos]</div>
-</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Equipment</p>
+      <h2>Every training style gets its own zone.</h2>
+      <p>Strength, cardio, free weights and a posing room — separated so nobody's workout blocks anybody else's.</p>
+    </div>
+    <div class="equip-grid">
+      <div class="equip-item reveal">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><path d="M8 36V20l14-8 14 8v16"/><path d="M14 36V26h16v10"/><path d="M8 36h28"/></svg>
+        <b>Strength &amp; Racks</b><span>Advanced machines members review by name</span>
+      </div>
+      <div class="equip-item reveal">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><path d="M6 34l10-16 8 8 12-14"/><path d="M6 38h32"/></svg>
+        <b>Dedicated Cardio Room</b><span>Its own room, away from the racks</span>
+      </div>
+      <div class="equip-item reveal">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><line x1="10" y1="22" x2="34" y2="22"/><circle cx="8" cy="22" r="4"/><circle cx="36" cy="22" r="4"/></svg>
+        <b>Free-Weight Zone</b><span>Dumbbells and bars with room to lift</span>
+      </div>
+      <div class="equip-item reveal">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#ff5a1f" stroke-width="2.4" aria-hidden="true"><rect x="8" y="8" width="28" height="28"/><line x1="8" y1="16" x2="36" y2="16"/><line x1="16" y1="16" x2="16" y2="36"/></svg>
+        <b>Posing Room</b><span>Check form and progress on camera</span>
+      </div>
+    </div>
+    <div class="ph reveal">[Add the complete equipment list and zone photos]</div>
+  </div>
 </section>
+
 <section class="member" id="membership">
-<div class="wrap member-grid">
-<div class="member-cta reveal">
-<p class="eyebrow">Membership</p>
-<h2>Try the floor before you commit to it.</h2>
-<p>Message the gym on WhatsApp about a trial session, train at the hours that suit you, and decide with the floor in front of you — not a brochure.</p>
-<a class="btn" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">Ask About a Trial on WhatsApp</a>
-<a class="tel" href="tel:+919953012117">Or call +91 99530 12117</a>
-</div>
-<div class="member-plans reveal">
-<h3>Plans &amp; Trial</h3>
-<div class="ph">[Add membership plans &amp; final pricing]</div>
-<div class="ph">[Add trial / day-pass details]</div>
-<div class="ph">[Add personal-training options]</div>
-<div class="ph">[Add exact FAQs — timings, joining, coaching]</div>
-</div>
-</div>
+  <div class="wrap member-grid">
+    <div class="member-cta reveal">
+      <p class="eyebrow">Membership</p>
+      <h2>Try the floor before you commit to it.</h2>
+      <p>Message the gym on WhatsApp about a trial session, train at the hours that suit you, and decide with the floor in front of you — not a brochure.</p>
+      <a class="btn" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">Ask About a Trial on WhatsApp</a>
+      <a class="tel" href="tel:+919953012117">Or call +91 99530 12117</a>
+    </div>
+    <div class="member-plans reveal">
+      <h3>Plans &amp; Trial</h3>
+      <div class="ph">[Add membership plans &amp; final pricing]</div>
+      <div class="ph">[Add trial / day-pass details]</div>
+      <div class="ph">[Add personal-training options]</div>
+      <div class="ph">[Add exact FAQs — timings, joining, coaching]</div>
+    </div>
+  </div>
 </section>
+
 <section class="visit sec" id="visit">
-<div class="wrap">
-<div class="sec-head reveal">
-<p class="eyebrow">Find us</p>
-<h2>Walk in. The floor does the selling.</h2>
-</div>
-<div class="visit-grid">
-<div class="visit-card reveal">
-<h3>Visit the gym</h3>
-<div class="vrow"><b>Address</b><span>540, Sunder Puri, Bhur Bharat Nagar, Railway Colony, Madhopura, Ghaziabad, Uttar Pradesh 201009</span></div>
-<div class="vrow"><b>Mon–Sat</b><span>5:00 AM – 11:00 PM</span></div>
-<div class="vrow"><b>Sunday</b><span>7:00 AM – 1:00 PM</span></div>
-<div class="vrow"><b>Phone</b><a href="tel:+919953012117">+91 99530 12117</a></div>
-<div class="vrow"><b>Directions</b><a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Warehouse%20Gym&amp;query_place_id=ChIJMdbqSnTxDDkRNgrLKrgVEf0" rel="noopener" target="_blank">Open in Google Maps</a></div>
-</div>
-<div class="visit-card reveal">
-<h3>Getting here</h3>
-<div class="ph map-ph">[Add a Google Maps embed]</div>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Find us</p>
+      <h2>Walk in. The floor does the selling.</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <h3>Visit the gym</h3>
+        <div class="vrow"><b>Address</b><span>540, Sunder Puri, Bhur Bharat Nagar, Railway Colony, Madhopura, Ghaziabad, Uttar Pradesh 201009</span></div>
+        <div class="vrow"><b>Mon–Sat</b><span>5:00 AM – 11:00 PM</span></div>
+        <div class="vrow"><b>Sunday</b><span>7:00 AM – 1:00 PM</span></div>
+        <div class="vrow"><b>Phone</b><a href="tel:+919953012117">+91 99530 12117</a></div>
+        <div class="vrow"><b>Directions</b><a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Warehouse%20Gym&amp;query_place_id=ChIJMdbqSnTxDDkRNgrLKrgVEf0" rel="noopener" target="_blank">Open in Google Maps</a></div>
+      </div>
+      <div class="visit-card reveal">
+        <h3>Getting here</h3>
+        <div class="ph map-ph">[Add a Google Maps embed]</div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <footer class="wrap footer">
-<div class="fline">
-<span class="wordmark" style="font-size:14px">The <em>Warehouse</em> Gym</span>
-<span>Ghaziabad, Uttar Pradesh 201009</span>
-<a href="tel:+919953012117">+91 99530 12117</a>
-<span>Mon–Sat 5 AM–11 PM · Sun 7 AM–1 PM</span>
-</div>
+  <div class="fline">
+    <span class="wordmark" style="font-size:14px">The <em>Warehouse</em> Gym</span>
+    <span>Ghaziabad, Uttar Pradesh 201009</span>
+    <a href="tel:+919953012117">+91 99530 12117</a>
+    <span>Mon–Sat 5 AM–11 PM · Sun 7 AM–1 PM</span>
+  </div>
 </footer>
+
 <div class="actionbar" role="navigation" aria-label="Contact actions">
-<a class="call" href="tel:+919953012117">Call the Gym</a>
-<a class="wa" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">WhatsApp Us</a>
+  <a class="call" href="tel:+919953012117">Call the Gym</a>
+  <a class="wa" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">WhatsApp Us</a>
 </div>
 <a class="wa-fab" href="https://wa.me/919953012117?text=Hi%20Warehouse%20Gym%2C%20I%27d%20like%20to%20ask%20about%20a%20trial%20and%20membership." rel="noopener">WhatsApp the Gym</a>
+
 <script defer src="ripple.engine.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-try{
-if(!reduce&&window.CanvasRipple){
-var host=document.querySelector('.ripple-host');
-var content=document.querySelector('.ripple-content');
-var glOK=!!document.createElement('canvas').getContext('webgl2');
-if(glOK&&host&&content){
-if(window.CanvasRipple.supportsHtmlInCanvas()){
-var source=document.createElement('canvas');
-source.setAttribute('layoutsubtree','true');
-source.style.cssText='position:absolute;inset:0;width:100%;height:100%;';
-var inner=document.createElement('div');
-inner.className='ripple-content';
-while(content.firstChild)inner.appendChild(content.firstChild);
-source.appendChild(inner);
-host.insertBefore(source,host.firstChild);
-var output=document.createElement('canvas');
-output.setAttribute('aria-hidden','true');
-output.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
-host.appendChild(output);
-window.CanvasRipple.createRipple({source:source,content:inner,output:output},{amplitude:.45,speed:.6,wavelength:90,rings:2,refraction:90,dispersion:.45,shine:.55,trigger:'click',interval:0});
-}else{
-var out2=document.createElement('canvas');
-out2.setAttribute('aria-hidden','true');
-out2.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
-host.appendChild(out2);
-var src2=document.createElement('canvas');
-window.CanvasRipple.createRipple({source:src2,content:content,output:out2},{shine:.7,trigger:'click'});
-}
-}
-}
-}catch(e){}
-if(!reduce&&window.gsap){
-gsap.registerPlugin(ScrollTrigger);
-gsap.timeline({defaults:{ease:'power3.out'}})
-.from('.hero .eyebrow',{y:16,opacity:0,duration:.5})
-.from('.hero h1',{y:34,opacity:0,duration:.7},'-=.25')
-.from('.hero .lede',{y:18,opacity:0,duration:.5},'-=.35')
-.from('.hero .cta-row .btn',{y:16,opacity:0,stagger:.09,duration:.45},'-=.3')
-.from('.stat-strip .stat',{y:14,opacity:0,stagger:.07,duration:.4},'-=.25')
-.from('.plan-card',{x:30,opacity:0,duration:.6},'-=.5');
-gsap.utils.toArray('.reveal').forEach(function(el){
-gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},y:26,opacity:0,duration:.55});
-});
-}
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Canvas UI Ripple — actual vendored engine (hero signature) */
+  try{
+    if(!reduce&&window.CanvasRipple){
+      var host=document.querySelector('.ripple-host');
+      var content=document.querySelector('.ripple-content');
+      var glOK=!!document.createElement('canvas').getContext('webgl2');
+      if(glOK&&host&&content){
+        if(window.CanvasRipple.supportsHtmlInCanvas()){
+          /* Full mode: capture hero into source canvas, refract on click */
+          var source=document.createElement('canvas');
+          source.setAttribute('layoutsubtree','true');
+          source.style.cssText='position:absolute;inset:0;width:100%;height:100%;';
+          var inner=document.createElement('div');
+          inner.className='ripple-content';
+          while(content.firstChild)inner.appendChild(content.firstChild);
+          source.appendChild(inner);
+          host.insertBefore(source,host.firstChild);
+          var output=document.createElement('canvas');
+          output.setAttribute('aria-hidden','true');
+          output.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
+          host.appendChild(output);
+          window.CanvasRipple.createRipple({source:source,content:inner,output:output},{amplitude:.45,speed:.6,wavelength:90,rings:2,refraction:90,dispersion:.45,shine:.55,trigger:'click',interval:0});
+        }else{
+          /* Fallback mode: live DOM untouched, crest glints on click */
+          var out2=document.createElement('canvas');
+          out2.setAttribute('aria-hidden','true');
+          out2.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
+          host.appendChild(out2);
+          var src2=document.createElement('canvas');
+          window.CanvasRipple.createRipple({source:src2,content:content,output:out2},{shine:.7,trigger:'click'});
+        }
+      }
+    }
+  }catch(e){}
+  /* GSAP entrance + scroll reveals */
+  if(!reduce&&window.gsap){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.timeline({defaults:{ease:'power3.out'}})
+      .from('.hero .eyebrow',{y:16,opacity:0,duration:.5})
+      .from('.hero h1',{y:34,opacity:0,duration:.7},'-=.25')
+      .from('.hero .lede',{y:18,opacity:0,duration:.5},'-=.35')
+      .from('.hero .cta-row .btn',{y:16,opacity:0,stagger:.09,duration:.45},'-=.3')
+      .from('.stat-strip .stat',{y:14,opacity:0,stagger:.07,duration:.4},'-=.25')
+      .from('.plan-card',{x:30,opacity:0,duration:.6},'-=.5');
+    gsap.utils.toArray('.reveal').forEach(function(el){
+      gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},y:26,opacity:0,duration:.55});
+    });
+  }
 });
 </script>
 </body>
