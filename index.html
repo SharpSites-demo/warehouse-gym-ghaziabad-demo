@@ -129,6 +129,10 @@ section{scroll-margin-top:70px}
   .marquee-track{animation:none}
   *{transition:none!important}
 }
+/* Scroll reveals: hidden only when JS is live, revealed via IntersectionObserver */
+.js .reveal{opacity:0;transform:translateY(26px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.22,.61,.36,1)}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ExerciseGym","name":"The Warehouse Gym","telephone":"+919953012117","address":{"@type":"PostalAddress","streetAddress":"540, Sunder Puri, Bhur Bharat Nagar, Railway Colony, Madhopura","addressLocality":"Ghaziabad","addressRegion":"Uttar Pradesh","postalCode":"201009","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":28.6546143,"longitude":77.4223595},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"05:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"07:00","closes":"13:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"302"}}
@@ -327,7 +331,7 @@ section{scroll-margin-top:70px}
 
 <script defer src="ripple.engine.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>document.documentElement.classList.add('js');</script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -365,9 +369,8 @@ document.addEventListener('DOMContentLoaded',function(){
       }
     }
   }catch(e){}
-  /* GSAP entrance + scroll reveals */
+  /* GSAP hero entrance */
   if(!reduce&&window.gsap){
-    gsap.registerPlugin(ScrollTrigger);
     gsap.timeline({defaults:{ease:'power3.out'}})
       .from('.hero .eyebrow',{y:16,opacity:0,duration:.5})
       .from('.hero h1',{y:34,opacity:0,duration:.7},'-=.25')
@@ -375,9 +378,17 @@ document.addEventListener('DOMContentLoaded',function(){
       .from('.hero .cta-row .btn',{y:16,opacity:0,stagger:.09,duration:.45},'-=.3')
       .from('.stat-strip .stat',{y:14,opacity:0,stagger:.07,duration:.4},'-=.25')
       .from('.plan-card',{x:30,opacity:0,duration:.6},'-=.5');
-    gsap.utils.toArray('.reveal').forEach(function(el){
-      gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},y:26,opacity:0,duration:.55});
-    });
+  }
+  /* Scroll reveals — IntersectionObserver + CSS (lightweight) */
+  if(!reduce&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{rootMargin:'0px 0px -12% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
   }
 });
 </script>
