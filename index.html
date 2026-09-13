@@ -22,7 +22,6 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:70rem;margin:auto;padding:0 22px}
 .kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--pine)}
 h1,h2{font-weight:900;letter-spacing:-.03em;line-height:1.02;margin:0}
-.rule{border:0;border-top:1px solid var(--ink);margin:0}
 /* MASTHEAD */
 .mast{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:2px solid var(--ink)}
 .brand{font-weight:900;font-size:18px;letter-spacing:-.01em;text-transform:uppercase}
@@ -326,14 +325,20 @@ h1,h2{font-weight:900;letter-spacing:-.03em;line-height:1.02;margin:0}
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* Canvas UI Ripple — vendored engine, hero signature, idle-time init */
-  var initRipple=function(){
+  /* Canvas UI Ripple — vendored engine, hero signature.
+     Lazy init on first interaction: with trigger:'click' and no ambient
+     interval the engine is idle until the first press, so deferring it
+     keeps the main thread clear during load. */
+  var rippleReady=false;
+  var initRipple=function(firstEvent){
+    if(rippleReady)return;rippleReady=true;
     try{
       if(reduce||!window.CanvasRipple)return;
       var host=document.querySelector('.ripple-host');
       var content=document.querySelector('.ripple-content');
       var glOK=!!document.createElement('canvas').getContext('webgl2');
       if(glOK&&host&&content){
+        var instance=null;
         if(window.CanvasRipple.supportsHtmlInCanvas()){
           var source=document.createElement('canvas');
           source.setAttribute('layoutsubtree','true');
@@ -347,19 +352,27 @@ document.addEventListener('DOMContentLoaded',function(){
           output.setAttribute('aria-hidden','true');
           output.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
           host.appendChild(output);
-          window.CanvasRipple.createRipple({source:source,content:inner,output:output},{amplitude:.4,speed:.6,wavelength:90,rings:2,refraction:80,dispersion:.4,shine:.35,trigger:'click',interval:0});
+          instance=window.CanvasRipple.createRipple({source:source,content:inner,output:output},{amplitude:.4,speed:.6,wavelength:90,rings:2,refraction:80,dispersion:.4,shine:.35,trigger:'click',interval:0});
         }else{
           var out2=document.createElement('canvas');
           out2.setAttribute('aria-hidden','true');
           out2.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;';
           host.appendChild(out2);
           var src2=document.createElement('canvas');
-          window.CanvasRipple.createRipple({source:src2,content:content,output:out2},{shine:.4,trigger:'click'});
+          instance=window.CanvasRipple.createRipple({source:src2,content:content,output:out2},{shine:.4,trigger:'click'});
+        }
+        if(instance&&firstEvent){
+          var rect=host.getBoundingClientRect();
+          instance.splash(firstEvent.clientX-rect.left,firstEvent.clientY-rect.top,1);
         }
       }
     }catch(e){}
   };
-  if(window.requestIdleCallback){requestIdleCallback(initRipple,{timeout:1500});}else{setTimeout(initRipple,200);}
+  document.addEventListener('pointerdown',function fn(e){
+    document.removeEventListener('pointerdown',fn);
+    if(window.CanvasRipple){initRipple(e);}
+    else{setTimeout(function(){initRipple(e);},300);}
+  },{passive:true});
   /* GSAP hero entrance + ScrollTrigger reveals */
   if(!reduce&&window.gsap&&window.ScrollTrigger){
     gsap.registerPlugin(ScrollTrigger);
